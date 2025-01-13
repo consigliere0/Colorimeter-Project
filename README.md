@@ -115,18 +115,6 @@ The smallest norm corresponds to **orange**, indicating the sample is closest to
 
 ---
 
-## Contributors
-
-This project was developed by:
-
-- **Clàudia Buch i Sánchez**
-- **Laura González i Vilardaga**
-
-Under the guidance of instructors from the **PEF1 course**, **Universitat Politècnica de Catalunya**.
-
----
-
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
