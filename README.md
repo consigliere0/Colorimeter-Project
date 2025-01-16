@@ -9,9 +9,7 @@ A precise and accessible **colorimeter** designed to identify the predominant hu
 - [Hardware Requirements](#hardware-requirements)
 - [Software Requirements](#software-requirements)
 - [How It Works](#how-it-works)
-- [Usage Instructions](#usage-instructions)
 - [Example Results](#example-results)
-- [Contributors](#contributors)
 - [License](#license)
 
 ---
@@ -46,7 +44,8 @@ To replicate this project, the following components are required:
 - Cylindrical light shield (black cardboard for instance)
 - Colored cards: white, red, orange, yellow, green, blue, black
 
-For detailed circuit design, refer to the **Circuit Schematic** section in the provided documentation.
+See the image below for an example of circuit schematic:
+![Circuit](circuit.jpg)
 
 ---
 
@@ -65,12 +64,13 @@ The repository includes:
 ## How It Works
 
 1. **Hardware Setup**:
+   - See the setup in the documentation.
    - The sample is placed under a cylindrical light shield to prevent external light interference.
    - LEDs sequentially illuminate the sample, and a phototransistor records the reflected light.
 
 2. **Data Collection**:
    - The Arduino code calculates the time taken for a capacitor to charge under each LED's light.
-   - These times are sent to the Serial Monitor.
+   - Said times are sent to the Serial Monitor.
 
 3. **Data Processing**:
    - MATLAB normalizes the raw data using the white reference card.
@@ -79,19 +79,6 @@ The repository includes:
 
 ---
 
-## Usage Instructions
-
-### Arduino Setup
-1. Connect the circuit as described in the documentation.
-2. Upload the `main.ino` file to the Arduino using the Arduino IDE.
-3. Open the Serial Monitor to follow the calibration and measurement instructions.
-
-### MATLAB Processing
-1. Copy the calibration (white card) vector and the unknown sample vector from the Serial Monitor.
-2. Run the `main.m` script in MATLAB.
-3. Input the copied vectors when prompted. The script will output the closest matching color.
-
----
 
 ## Example Results
 
