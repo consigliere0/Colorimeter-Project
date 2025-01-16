@@ -1,5 +1,5 @@
 #include <Arduino.h> 
-// Pins dels LEDs
+// LED pins
 const int ledPins[5] = { 2, 3, 4, 5, 6 };  
 const int comparatorPin = 7;               
 const int capacitorPin = 8;                
@@ -23,42 +23,30 @@ void setup() {
     digitalWrite(ledPins[i], HIGH);  // LEDs apagats
   }
 
-  
   pinMode(comparatorPin, INPUT);
-
   
   pinMode(capacitorPin, OUTPUT);
   digitalWrite(capacitorPin, LOW);
-
   
   Serial.begin(9600);
   delay(3000);
 
-  
   Serial.println("Place the white card and press switch when done.");
-
   
   while (digitalRead(switchPin) == HIGH) {
-    
   }
-
   
   calibrateWhiteCard();
 
-  
   Serial.println("Callibration complete.");
   Serial.println("Place the unknown card and press switch when done.");
 
-  
-  while (digitalRead(switchPin) == HIGH) {
-  
+  while (digitalRead(switchPin) == HIGH) {  
   }
 
   measureUnknownCard();
   Serial.println("Introduce the data in Matlab in the form of row vectors.");
 }
-
- 
 
 void loop() {
   if (!sequenceCompleted) {
@@ -86,18 +74,18 @@ void manageLedAndCapacitor(int ledIndex) {
 
   pinMode(capacitorPin, INPUT);
 
-  // Inicia el temporitzador
+  // Starts timer
   unsigned long start = millis();
 
   while (digitalRead(comparatorPin) == LOW) {
     if (millis() - start > timeout) {
-      Serial.print("Error: el comparador no ha canviat d'estat en el temps esperat per al LED ");
+      Serial.print("Error: the comparator did not change state in the expected time for the LED");
       Serial.println(ledIndex + 1);
       break;
     }
   }
 
-  // Mesura el temps transcorregut
+  // Measures elapsed time
   unsigned long elapsedTime = millis() - start;
 
   chargeTimes[ledIndex] = elapsedTime;  // Store the elapsed time in the array
