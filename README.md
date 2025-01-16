@@ -99,7 +99,6 @@ Here are some example outputs from the project:
   ```
 
 The smallest norm corresponds to **orange**, indicating the sample is closest to this color.
-
 ---
 
 ## License
