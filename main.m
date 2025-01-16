@@ -1,7 +1,7 @@
 clear all; close all;
 format long g
 
-%% Codi MATLAB per introduir manualment dos vectors de dades
+%% MATLAB code to manually enter two data vectors
 
 disp('Introduce the vector containing the white card data.');
 white = input('White card vector: ');
